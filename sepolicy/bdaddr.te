@@ -7,8 +7,8 @@ init_daemon_domain(bdaddr)
 qmux_socket(bdaddr)
 
 # Allow access /data/misc/bluetooth
-allow hwaddrs bluetooth_data_file:dir w_dir_perms;
-allow hwaddrs bluetooth_data_file:file create_file_perms;
+allow bdaddr bluetooth_data_file:dir w_dir_perms;
+allow bdaddr bluetooth_data_file:file create_file_perms;
 
 allow bdaddr self:capability dac_override;
 allow bdaddr self:socket create_socket_perms;
